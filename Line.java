@@ -1,9 +1,9 @@
 
 public class Line implements GeometricShape {
     //Fields:
-    private Point p1;
-    private Point p2;
-    private Point anchor; //the point representing the middle of the Line.
+    private final Point p1;
+    private final Point p2;
+    private final Point anchor; //the point representing the middle of the Line.
 
     //Constructors
     public Line(Point p1, Point p2) {
@@ -66,5 +66,13 @@ public class Line implements GeometricShape {
     @Override
     public String getShapeName() {
         return "Line";
+    }
+
+    public Point getP2() {
+        return p2;
+    }
+
+    public Point getP1() {
+        return p1;
     }
 }

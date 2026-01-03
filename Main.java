@@ -1,7 +1,8 @@
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        ShapeCollection canvas = new ShapeCollection();
+     /*   ShapeCollection canvas = new ShapeCollection();
 
         Rectangle rectangle = new Rectangle(100, 100, new Point(300,250));
         Circle circle = new Circle(new Point(50, 50), 10);
@@ -48,7 +49,22 @@ public class Main {
         System.out.println("Removing the Circle.....");
         tree.remove(circle);
         tree.printTree();
+*/
+        ShapeCollection shapes = new ShapeCollection();
 
+        shapes.addShape(new Rectangle(200, 150, new Point(100, 100))); // מלבן אדום
+        shapes.addShape(new Circle(new Point(400, 300), 50));          // מעגל כחול
+        shapes.addShape(new Line(new Point(50, 50), new Point(500, 500))); // קו שחור
+        shapes.addShape(new Circle(new Point(300, 300), 73));
+        shapes.getShapeAt(new Point(300,300)).moveTo(600,150);
 
+        JFrame frame = new JFrame("My Shapes Project");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        ShapeCanvas canvas = new ShapeCanvas(shapes);
+        frame.add(canvas);
+
+        frame.pack();
+        frame.setVisible(true);
     }
 }
